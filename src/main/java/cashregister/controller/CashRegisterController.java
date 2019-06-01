@@ -1,4 +1,4 @@
-package cashregister;
+package cashregister.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +8,6 @@ public class CashRegisterController {
 
     @RequestMapping("/")
     public String index(){
-        return "Spring boot";
+        return "start.jsp";
     }
 }
