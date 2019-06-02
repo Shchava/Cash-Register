@@ -2,9 +2,7 @@ package cashregister.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -17,5 +15,21 @@ import javax.persistence.Table;
 @Table(name = "receipt_entry")
 public class ReceiptEntry {
     @Id
+    @Column(name = "id_goods")
+    @ManyToOne
     Goods goods;
+
+    @Id
+    @Column(name = "id_receipt")
+    @ManyToOne
+    Receipt receipt;
+
+    @Column(name = "count")
+    int count;
+
+    @Column(name = "weight")
+    int weight;
+
+    @Column(name = "price")
+    int price;
 }
