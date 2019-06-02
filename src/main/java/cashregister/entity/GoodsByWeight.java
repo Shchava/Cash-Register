@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 
 
 @Entity
-@DiscriminatorValue("1")
+@DiscriminatorValue("Weight")
 public class GoodsByWeight extends Goods {
     @Column(name = "weight_price")
     int weight_price;

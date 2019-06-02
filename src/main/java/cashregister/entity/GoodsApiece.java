@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 @ToString
 
 @Entity
-@DiscriminatorValue("2")
+@DiscriminatorValue("Apiece")
 public class GoodsApiece extends Goods {
     @Column(name = "apiece_price")
     int apiece_price;

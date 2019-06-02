@@ -12,10 +12,10 @@ import javax.persistence.*;
 @EqualsAndHashCode
 
 @Entity
-@Table(name = "Goods")
+@Table(name = "goods")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
-        discriminatorType = DiscriminatorType.INTEGER,
+        discriminatorType = DiscriminatorType.STRING,
         name = "type")
 public class Goods {
     @Id
