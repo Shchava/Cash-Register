@@ -1,8 +1,17 @@
 package cashregister.entity;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+
 
 @Entity
 @DiscriminatorValue("1")

@@ -13,6 +13,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Goods")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.INTEGER,
         name = "type")
@@ -20,7 +21,7 @@ public class Goods {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_article", updatable = false)
-    int id_article;
+    long id_article;
 
     @Column(name = "name")
     String name;
