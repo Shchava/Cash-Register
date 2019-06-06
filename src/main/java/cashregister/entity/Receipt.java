@@ -2,10 +2,7 @@ package cashregister.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
@@ -24,9 +21,9 @@ public class Receipt {
     @Column(name = "created")
     LocalDateTime created;
 
-    @Column(name = "cassier")
+    @ManyToOne
     User cashier;
 
-    @Column(name = "senior_cassier")
+    @ManyToOne
     User seniorCashier;
 }
