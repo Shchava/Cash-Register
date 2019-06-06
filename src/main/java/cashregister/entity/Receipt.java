@@ -21,9 +21,11 @@ public class Receipt {
     @Column(name = "created")
     LocalDateTime created;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "senior_cashier", referencedColumnName = "id_user")
     User cashier;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cashier", referencedColumnName = "id_user")
     User seniorCashier;
 }
