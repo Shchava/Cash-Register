@@ -2,10 +2,7 @@ package cashregister.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -14,6 +11,7 @@ import javax.persistence.Entity;
 @ToString
 
 @Entity
+@Table(name = "goods")
 @DiscriminatorValue("Apiece")
 public class GoodsApiece extends Goods {
     @Column(name = "apiece_price")

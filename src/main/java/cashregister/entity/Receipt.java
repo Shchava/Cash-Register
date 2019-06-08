@@ -16,16 +16,17 @@ import java.time.LocalDateTime;
 @Table(name = "receipt")
 public class Receipt {
     @Id
+    @Column(name = "id_receipt")
     long id_receipt;
 
     @Column(name = "created")
     LocalDateTime created;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "senior_cashier", referencedColumnName = "id_user")
+    @JoinColumn(name = "cashier", referencedColumnName = "id_user")
     User cashier;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cashier", referencedColumnName = "id_user")
+    @JoinColumn(name = "senior_cashier", referencedColumnName = "id_user")
     User seniorCashier;
 }

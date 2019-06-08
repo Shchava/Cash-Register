@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Getter
 @Setter
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 
 
 @Entity
+@Table(name = "goods")
 @DiscriminatorValue("Weight")
 public class GoodsByWeight extends Goods {
     @Column(name = "weight_price")

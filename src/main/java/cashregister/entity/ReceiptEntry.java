@@ -10,16 +10,18 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-//
-//@Entity
-//@Table(name = "receipt_entry")
+
+@Entity
+@Table(name = "receipt_entry")
 public class ReceiptEntry {
     @Id
     @ManyToOne
+    @JoinColumn(name = "id_receipt",referencedColumnName = "id_goods")
     Goods goods;
 
     @Id
     @ManyToOne
+    @JoinColumn(name = "id_goods",referencedColumnName = "id_receipt")
     Receipt receipt;
 
     @Column(name = "count")

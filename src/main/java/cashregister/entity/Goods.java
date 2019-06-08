@@ -6,24 +6,23 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 @EqualsAndHashCode
 
 @Entity
 @Table(name = "goods")
+
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.STRING,
         name = "type")
-public class Goods {
+public abstract class Goods {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_article", updatable = false)
-    long id_article;
+    @Column(name = "id_goods")
+    protected long id_goods;
 
     @Column(name = "name")
-    String name;
+    protected String name;
 
 }

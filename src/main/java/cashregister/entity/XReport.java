@@ -15,6 +15,7 @@ import java.util.Set;
 @EqualsAndHashCode
 
 @Entity
+@Table(name = "x_report")
 @DiscriminatorColumn(
         discriminatorType = DiscriminatorType.CHAR,
         name = "is_z_report")
@@ -32,7 +33,7 @@ public class XReport {
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-            name = "receipt_entry",
+            name = "x_report_has_receipt",
             joinColumns = { @JoinColumn(name = "x_report_id_x_report") },
             inverseJoinColumns = { @JoinColumn(name = "receipt_id_receipt") }
     )
